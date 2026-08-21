@@ -465,22 +465,390 @@ func byte_b_iiii(n: int, n2: int, n3: int, n4: int) -> int:
 # ---------------------------------------------------------------------------
 
 ## original: private void a(int n, int n2, int n3, int n4, int n5)  (b.java:466)
-func a_iiiii(_n: int, _n2: int, _n3: int, _n4: int, _n5: int) -> void:
-	push_warning("TribesWorld.a_iiiii() not ported yet (original: private void a(int,int,int,int,int), b.java:466)")
+func a_iiiii(n: int, n2: int, n3: int, n4: int, n5: int) -> void:
+	# try{...}catch(Exception){} block — GDScript has no catch-all; port body directly.
+	# If any runtime error occurs here (bad index etc.) it will crash instead of being
+	# silently swallowed like the original. Will revisit if needed once more context is ported.
+	void_a_ii(n3 - n, n4 - n2)
+	var_int_a = 0
+	while var_int_a < 3:
+		var_byte_arr_d[var_int_a << 1] = JNum.to_byte(n)
+		var_byte_arr_d[(var_int_a << 1) + 1] = JNum.to_byte(n2)
+		var_int_a += 1
+	e_i(n5)
+	var_int_b = 1000
+	var_int_a = 0
+	while var_int_a < 3:
+		if var_byte_arr_e[var_int_a] < var_int_b:
+			var_int_b = var_byte_arr_e[var_int_a]
+			var_byte_arr_g[0] = JNum.to_byte(var_int_a)
+		var_int_a += 1
+	var_byte_arr_g[1] = JNum.to_byte((var_byte_arr_g[0] + 1) % 3)
+	var_byte_arr_g[2] = JNum.to_byte((var_byte_arr_g[0] + 2) % 3)
+	var_byte_d = 0
+	var_byte_c = 0
+	if var_byte_arr_e[var_byte_arr_g[0]] > 0:
+		var_int_a = 0
+		while var_int_a < var_byte_arr_f[var_byte_arr_g[0]]:
+			var_byte_e = var_byte_d
+			var by: int = var_byte_arr_arr_arr_d[var_byte_arr_g[0]][1][var_int_a]
+			var by2: int = var_byte_arr_arr_arr_d[var_byte_arr_g[0]][0][var_int_a]
+			var_byte_d = JNum.to_byte(0 if var_byte_arr_arr_b[by][by2] == 0 else byte_a_iiii(by2, by, n5))
+			if var_byte_e == 0 and var_byte_d != 0:
+				if var_byte_c >= 10:
+					break  # break out of the while loop (equivalent to break block10 label in Java)
+				var_byte_arr_arr_arr_e[0][0][var_byte_c] = JNum.to_byte(n if var_int_a == 0 else var_byte_arr_arr_arr_d[var_byte_arr_g[0]][0][var_int_a - 1])
+				var_byte_arr_arr_arr_e[0][1][var_byte_c] = JNum.to_byte(n2 if var_int_a == 0 else var_byte_arr_arr_arr_d[var_byte_arr_g[0]][1][var_int_a - 1])
+				var_byte_arr_arr_arr_e[0][2][var_byte_c] = JNum.to_byte(var_int_a - 1)
+				var_byte_arr_arr_arr_e[1][0][var_byte_c] = -1
+				var_byte_c = JNum.to_byte(var_byte_c + 1)
+			elif var_byte_e != 0 and var_byte_d == 0:
+				var_byte_arr_arr_arr_e[1][0][var_byte_c - 1] = by2
+				var_byte_arr_arr_arr_e[1][1][var_byte_c - 1] = by
+				var_byte_arr_arr_arr_e[1][2][var_byte_c - 1] = JNum.to_byte(var_int_a)
+				var_byte_arr_h[var_byte_c - 1] = var_f_a.var_byte_arr_arr_b[by][by2]
+				var_f_a.var_byte_arr_arr_b[by][by2] = JNum.to_byte(256 - var_byte_c)
+			var_int_a += 1
+
+## original: private void void_a(int n, int n2)  (b.java:520)
+func void_a_ii(n: int, n2: int) -> void:
+	var_byte_a = 0
+	if n > 0:
+		var_byte_a = JNum.to_byte(var_byte_a + 4)
+	else:
+		n *= -1
+	if n2 > 0:
+		var_byte_a = JNum.to_byte(var_byte_a + 2)
+	else:
+		n2 *= -1
+	if n > n2:
+		var_byte_a = JNum.to_byte(var_byte_a + 1)
+		var_byte_arr_c[0] = JNum.to_byte(n - n2)
+		var_byte_arr_c[1] = JNum.to_byte(n2)
+		return
+	var_byte_arr_c[0] = JNum.to_byte(n2 - n)
+	var_byte_arr_c[1] = JNum.to_byte(n)
+
+## original: private void e(int n)  (b.java:542)
+func e_i(n: int) -> void:
+	var_int_a = 0
+	while var_int_a < 3:
+		var_byte_arr_f[var_int_a] = JNum.to_byte(var_byte_arr_c[0] + var_byte_arr_c[1])
+		var_byte_arr_e[var_int_a] = 0
+		var_int_a += 1
+	var_int_e = 0
+	while var_int_e < 2:
+		var_int_c = 0
+		var_int_a = var_int_e
+		while var_int_a != 2 - 3 * var_int_e:
+			var_int_b = 0
+			while var_int_b < var_byte_arr_c[var_int_a]:
+				var n2: int = var_int_e << 1
+				var_byte_arr_d[n2] = JNum.to_byte(var_byte_arr_d[n2] + var_byte_arr_b[var_short_arr_a[0] + var_byte_a * 4 + var_int_a * 2])
+				var n3: int = (var_int_e << 1) + 1
+				var_byte_arr_d[n3] = JNum.to_byte(var_byte_arr_d[n3] + var_byte_arr_b[var_short_arr_a[0] + var_byte_a * 4 + var_int_a * 2 + 1])
+				var_byte_arr_arr_arr_d[var_int_e][0][var_int_c] = var_byte_arr_d[var_int_e << 1]
+				var_byte_arr_arr_arr_d[var_int_e][1][var_int_c] = var_byte_arr_d[(var_int_e << 1) + 1]
+				var n4: int = var_int_e
+				var_byte_arr_e[n4] = JNum.to_byte(var_byte_arr_e[n4] + (0 if var_byte_arr_arr_b[var_byte_arr_d[(var_int_e << 1) + 1]][var_byte_arr_d[var_int_e << 1]] == 0 else byte_a_iiii(var_byte_arr_d[var_int_e << 1], var_byte_arr_d[(var_int_e << 1) + 1], n)))
+				var_int_b += 1
+				var_int_c += 1
+			var_int_a += 1 - 2 * var_int_e
+		var_int_e += 1
+	var_int_e = 0
+	var_int_f = 0
+	var_int_g = var_byte_arr_c[1] * 50 / var_byte_arr_c[1] if var_byte_arr_c[1] > 0 else 1000000
+	var_int_b = var_int_g
+	var_int_a = 0
+	while var_int_a < var_byte_arr_c[0] + var_byte_arr_c[1]:
+		if var_int_b >= 50 and var_int_e < var_byte_arr_c[0] or var_int_f >= var_byte_arr_c[1]:
+			var_byte_arr_d[4] = JNum.to_byte(var_byte_arr_d[4] + var_byte_arr_b[var_short_arr_a[0] + var_byte_a * 4 + 0])
+			var_byte_arr_d[5] = JNum.to_byte(var_byte_arr_d[5] + var_byte_arr_b[var_short_arr_a[0] + var_byte_a * 4 + 1])
+			var_int_e += 1
+			var_int_b -= 50
+		else:
+			var_byte_arr_d[4] = JNum.to_byte(var_byte_arr_d[4] + var_byte_arr_b[var_short_arr_a[0] + var_byte_a * 4 + 2])
+			var_byte_arr_d[5] = JNum.to_byte(var_byte_arr_d[5] + var_byte_arr_b[var_short_arr_a[0] + var_byte_a * 4 + 3])
+			var_int_f += 1
+			var_int_b += var_int_g
+		var_byte_arr_arr_arr_d[2][0][var_int_a] = var_byte_arr_d[4]
+		var_byte_arr_arr_arr_d[2][1][var_int_a] = var_byte_arr_d[5]
+		var_byte_arr_e[2] = JNum.to_byte(var_byte_arr_e[2] + (0 if var_byte_arr_arr_b[var_byte_arr_d[5]][var_byte_arr_d[4]] == 0 else byte_a_iiii(var_byte_arr_d[4], var_byte_arr_d[5], n)))
+		var_int_a += 1
 
 ## original: private void f(int n)  (b.java:595)
-func f_i(_n: int) -> void:
-	push_warning("TribesWorld.f_i() not ported yet (original: private void f(int), b.java:595)")
+func f_i(n: int) -> void:
+	# try{...}catch(Exception){} — same note as other methods with swallowed exceptions
+	var_int_g = 1
+	var_int_e = 1
+	while var_int_e < 3:
+		var_int_h = var_byte_arr_g[var_int_e]
+		var_byte_arr_f[var_int_h] = 0
+		var_boolean_arr_a[var_int_e - 1] = false
+		var_byte_b = var_byte_arr_b[var_short_arr_a[3] + var_byte_arr_arr_arr_d[var_byte_arr_g[0]][0][var_byte_arr_arr_arr_e[0][2][var_int_a] + 1] - var_byte_arr_arr_arr_e[0][0][var_int_a] + (var_byte_arr_arr_arr_d[var_byte_arr_g[0]][1][var_byte_arr_arr_arr_e[0][2][var_int_a] + 1] - var_byte_arr_arr_arr_e[0][1][var_int_a]) * 3 + 4]
+		var_byte_arr_d[var_int_h * 2] = var_byte_arr_arr_arr_e[0][0][var_int_a]
+		var_byte_arr_d[var_int_h * 2 + 1] = var_byte_arr_arr_arr_e[0][1][var_int_a]
+		var_int_b = 0
+		while var_int_b < 65:
+			var by: int
+			var_int_f = 0
+			while var_int_f < 8:
+				by = JNum.to_byte(var_byte_arr_d[var_int_h * 2] + var_byte_arr_b[var_short_arr_a[1] + var_byte_b])
+				var by2: int = JNum.to_byte(var_byte_arr_d[var_int_h * 2 + 1] + var_byte_arr_b[var_short_arr_a[1] + 8 + var_byte_b])
+				var condition_check: int = 2 if (by >= var_f_a.var_short_c or by2 >= var_f_a.var_short_d or by < 0 or by2 < 0) else (0 if var_byte_arr_arr_b[by2][by] == 0 else byte_a_iiii(by, by2, n))
+				if condition_check == 2:
+					var_int_b = 130
+					break
+				if condition_check == 0:
+					if (var_byte_b & 1) > 0:
+						by = var_f_a.var_byte_arr_arr_b[var_byte_arr_d[var_int_h * 2 + 1] + var_byte_arr_b[var_short_arr_a[1] + 8 + ((var_byte_b + var_int_g) & 7)]][var_byte_arr_d[var_int_h * 2] + var_byte_arr_b[var_short_arr_a[1] + ((var_byte_b + var_int_g) & 7)]]
+						if by < -var_int_a and by >= -10:
+							var_byte_arr_e[var_int_h] = JNum.to_byte(-(by + 1))
+							var_boolean_arr_a[var_int_e - 1] = true
+							var_int_b = 130
+							break
+						if var_byte_arr_d[var_int_h * 2] + var_byte_arr_b[var_short_arr_a[1] + ((var_byte_b + var_int_g) & 7)] == var_byte_arr_arr_arr_e[0][0][var_int_a] and var_byte_arr_d[var_int_h * 2 + 1] + var_byte_arr_b[var_short_arr_a[1] + 8 + ((var_byte_b + var_int_g) & 7)] == var_byte_arr_arr_arr_e[0][1][var_int_a]:
+							var_int_b = 130
+							break
+					var n2: int = var_int_h * 2
+					var_byte_arr_d[n2] = JNum.to_byte(var_byte_arr_d[n2] + var_byte_arr_b[var_short_arr_a[1] + var_byte_b])
+					var n3: int = var_int_h * 2 + 1
+					var_byte_arr_d[n3] = JNum.to_byte(var_byte_arr_d[n3] + var_byte_arr_b[var_short_arr_a[1] + 8 + var_byte_b])
+					break
+				var_byte_b = JNum.to_byte((var_byte_b + var_int_g) & 7)
+				var_int_f += 1
+			if var_int_f >= 8 or (var_byte_arr_d[var_int_h * 2] == var_byte_arr_arr_arr_e[0][0][var_int_a] and var_byte_arr_d[var_int_h * 2 + 1] == var_byte_arr_arr_arr_e[0][1][var_int_a]):
+				if var_int_f < 8:
+					break
+				var_boolean_arr_a[2] = false
+				break
+			if var_int_b > 127:
+				break
+			by = var_f_a.var_byte_arr_arr_b[var_byte_arr_d[var_int_h * 2 + 1]][var_byte_arr_d[var_int_h * 2]]
+			if by < -var_int_a and by >= -10:
+				var_byte_arr_e[var_int_h] = JNum.to_byte(-(by + 1))
+				var_boolean_arr_a[var_int_e - 1] = true
+				break
+			var_byte_arr_arr_arr_d[var_int_h][0][var_int_b] = var_byte_arr_d[var_int_h * 2]
+			var_byte_arr_arr_arr_d[var_int_h][1][var_int_b] = var_byte_arr_d[var_int_h * 2 + 1]
+			var n4: int = var_int_h
+			var_byte_arr_f[n4] = JNum.to_byte(var_byte_arr_f[n4] + 1)
+			var_byte_b = JNum.to_byte((var_byte_b - var_int_g * 2) & 7)
+			var_int_b += 1
+		var_int_g *= -1
+		var_int_e += 1
 
 ## original: private void void_a(boolean bl)  (b.java:669)
-func void_a_z(_bl: bool) -> void:
-	push_warning("TribesWorld.void_a_z() not ported yet (original: private void void_a(boolean), b.java:669)")
+func void_a_z(bl: bool) -> void:
+	if not var_boolean_arr_a[0] or (var_byte_arr_f[var_byte_arr_g[1]] > var_byte_arr_f[var_byte_arr_g[2]] and var_boolean_arr_a[1]):
+		var_int_e = var_byte_arr_g[1]
+		var_byte_arr_g[1] = var_byte_arr_g[2]
+		var_byte_arr_g[2] = JNum.to_byte(var_int_e)
+	var_int_e = 0
+	while var_int_e <= var_byte_arr_arr_arr_e[0][2][var_int_a]:
+		var_byte_arr_arr_arr_d[var_byte_arr_g[2]][0][var_int_e] = var_byte_arr_arr_arr_d[var_byte_arr_g[0]][0][var_int_e]
+		var_byte_arr_arr_arr_d[var_byte_arr_g[2]][1][var_int_e] = var_byte_arr_arr_arr_d[var_byte_arr_g[0]][1][var_int_e]
+		var_int_e += 1
+	var_byte_arr_f[var_byte_arr_g[2]] = JNum.to_byte(var_byte_arr_arr_arr_e[0][2][var_int_a] + 1)
+	var_int_e = 0
+	while var_int_e <= var_byte_arr_f[var_byte_arr_g[1]] and var_int_e + var_byte_arr_f[var_byte_arr_g[2]] < var_int_i:
+		var_byte_arr_arr_arr_d[var_byte_arr_g[2]][0][var_int_e + var_byte_arr_f[var_byte_arr_g[2]]] = var_byte_arr_arr_arr_d[var_byte_arr_g[1]][0][var_int_e]
+		var_byte_arr_arr_arr_d[var_byte_arr_g[2]][1][var_int_e + var_byte_arr_f[var_byte_arr_g[2]]] = var_byte_arr_arr_arr_d[var_byte_arr_g[1]][1][var_int_e]
+		var_int_e += 1
+	var_byte_arr_f[var_byte_arr_g[2]] = JNum.to_byte(clamp(var_byte_arr_f[var_byte_arr_g[2]] + var_byte_arr_f[var_byte_arr_g[1]], 0, var_int_i))
+	var_int_e = var_byte_arr_g[0]
+	var_byte_arr_g[0] = var_byte_arr_g[2]
+	var_byte_arr_g[2] = JNum.to_byte(var_int_e)
+	if not bl or var_byte_arr_f[var_byte_arr_g[0]] >= var_int_i:
+		return
+	var_int_g = var_byte_arr_arr_arr_e[1][2][var_byte_arr_e[var_byte_arr_g[1]]]
+	var_int_h = var_byte_arr_f[var_byte_arr_g[1]] - var_int_g + var_byte_arr_arr_arr_e[0][2][var_int_a] + 1
+	var_int_e = 0
+	while var_int_e <= var_byte_arr_f[var_byte_arr_g[2]] - var_int_g and var_int_e + var_byte_arr_f[var_byte_arr_g[0]] < var_int_i:
+		var_byte_arr_arr_arr_d[var_byte_arr_g[0]][0][var_int_e + var_byte_arr_f[var_byte_arr_g[0]]] = var_byte_arr_arr_arr_d[var_byte_arr_g[2]][0][var_int_e + var_int_g]
+		var_byte_arr_arr_arr_d[var_byte_arr_g[0]][1][var_int_e + var_byte_arr_f[var_byte_arr_g[0]]] = var_byte_arr_arr_arr_d[var_byte_arr_g[2]][1][var_int_e + var_int_g]
+		var_int_e += 1
+	var_byte_arr_f[var_byte_arr_g[0]] = JNum.to_byte(clamp(var_byte_arr_f[var_byte_arr_g[0]] + var_byte_arr_f[var_byte_arr_g[2]] - var_int_g, 0, var_int_i))
+	var_int_a = var_byte_arr_e[var_byte_arr_g[1]]
+	var_int_e = var_int_a + 1
+	while var_int_e < var_byte_c:
+		var_byte_arr_arr_arr_e[0][2][var_int_e] = JNum.to_byte(var_byte_arr_arr_arr_e[0][2][var_int_e] + var_int_h)
+		var_byte_arr_arr_arr_e[1][2][var_int_e] = JNum.to_byte(var_byte_arr_arr_arr_e[1][2][var_int_e] + var_int_h)
+		var_int_e += 1
 
 ## original: private void P()  (b.java:3545)
 func P() -> void:
 	push_warning("TribesWorld.P() not ported yet (original: private void P(), b.java:3545)")
 
 ## original: private int int_a(int n, int n2, int n3)  (b.java:980)
-func int_a_iii(_n: int, _n2: int, _n3: int) -> int:
-	push_warning("TribesWorld.int_a_iii() not ported yet (original: private int int_a(int,int,int), b.java:980)")
+func int_a_iii(n: int, n2: int, n3: int) -> int:
+	# Port of b.java:980 — int_a(int,int,int)
+	# try{...}catch(Exception){} — same pattern as before
+	if n < 0 or n2 < 0 or n >= var_f_a.var_short_c or n2 >= var_f_a.var_short_d:
+		return 0
+	var_int_k = var_byte_arr_b[var_short_arr_a[39] + var_byte_arr_arr_b[n2][n]]
+	if var_int_k == 0 or var_int_k == 1:
+		return 0
+	if n3 == 1:
+		return 1
+	var_int_k = var_short_arr_a[39 + var_byte_arr_arr_b[n2][n]]
+	var_int_l = var_int_arr_a[var_byte_arr_a[4747 + var_int_v] - 1] & var_byte_arr_b[var_int_k]
+	if var_int_l == 0:
+		return 0
+	var_int_m = 0
+	var_int_n = 0
+	var_int_o = var_f_a.var_short_c - 1
+	var_int_p = var_f_a.var_short_d - 1
+	if n3 == 0:
+		var_int_m = -3
+		var_int_n = -3
+		var_int_o += 3
+		var_int_p += 3
+	elif n3 == 2:
+		var_int_m = -6
+		var_int_n = -6
+		var_int_o += 6
+		var_int_p += 6
+	var_int_q = 0
+	var_int_r = var_int_m
+	while var_int_r <= var_int_p:
+		var_int_s = var_int_m
+		while var_int_s <= var_int_o:
+			if var_byte_arr_arr_b[n2 + var_int_r][n + var_int_s] > 0:
+				var_int_q += 1
+			var_int_s += 1
+		var_int_r += 1
+	if var_int_q == 0:
+		return 0
+	var_int_q = 0
+	var_int_r = var_int_m
+	while var_int_r <= var_int_p:
+		var_int_s = var_int_m
+		while var_int_s <= var_int_o:
+			if var_byte_arr_arr_b[n2 + var_int_r][n + var_int_s] > 0 and (var_byte_arr_b[var_short_arr_a[39] + var_byte_arr_arr_b[n2 + var_int_r][n + var_int_s]] & var_int_l) != 0:
+				var_int_q += 1
+			var_int_s += 1
+		var_int_r += 1
+	if var_int_q == 0:
+		return 0
+	return 1
+
+## original: private void g(int n)  (b.java:743)
+func g_i(n: int) -> void:
+	# try{...}catch(Exception){} — same note as before
+	if var_byte_arr_a[6161 + var_int_v] > 1:
+		var_byte_arr_a[6161 + var_int_v] = JNum.to_byte(1 if var_byte_arr_a[6161 + var_int_v] == 2 else 0)
+		if var_byte_I == 1 or var_byte_I == 2 or (var_f_a.var_byte_q == 2 and var_int_u == 1 and var_byte_f == 1):
+			var_byte_arr_a[7777 + var_int_v] = JNum.to_byte(3)
+	if n < 3:
+		d_ii(var_int_v, n)
+	if var_byte_arr_arr_b[var_byte_arr_a[101 + var_int_v]][var_byte_arr_a[0 + var_int_v]] != var_int_v:
+		U()
+		return
+	a_iii(var_byte_arr_a[3131 + var_int_v], var_byte_arr_a[3232 + var_int_v], n > 0)
+	if var_byte_l >= 0 and (var_byte_l != 10 or n < 2):
+		var_byte_arr_a[3131 + var_int_v] = var_byte_arr_a[0 + var_int_v]
+		var_byte_arr_a[3232 + var_int_v] = var_byte_arr_a[101 + var_int_v]
+		Q()
+		if var_byte_arr_a[6161 + var_int_v] == 1:
+			a_iii(var_byte_l, var_int_v, var_int_v)
+		return
+	h_i(n)
+
+## original: private void h(int n)  (b.java:776)
+func h_i(n: int) -> void:
+	var_byte_arr_a[4444 + var_int_v] = var_byte_arr_k[2]
+	if var_byte_m == 2 or var_byte_m == 7:
+		var_byte_arr_a[7979 + var_int_v] = JNum.to_byte(var_byte_arr_a[2828 + var_int_v] == 60 or n == 0 or ((var_byte_arr_a[2828 + var_int_v] == 2 or var_byte_arr_a[2828 + var_int_v] == 7) and (var_byte_arr_a[7979 + var_int_v] & 0x80) == 0) \
+			and var_byte_arr_a[7979 + var_int_v] & 0x7F or var_byte_arr_a[7979 + var_int_v] | 0x80)
+	if not (n != 0 and (var_f_a.var_boolean_N or (var_byte_m != 12 and var_byte_m != 16 or (var_byte_arr_b[var_short_arr_a[41] + var_byte_arr_a[6464 + var_int_v]] != 3 and var_byte_arr_b[var_short_arr_a[41] + var_byte_arr_a[6464 + var_int_v]] != 7))) \
+		and ((var_f_a.var_boolean_N or var_byte_K < 50) and var_byte_arr_b[var_short_arr_a[41] + var_byte_m] != 0)):
+		if var_byte_arr_arr_b[var_byte_arr_a[101 + var_int_v]][var_byte_arr_a[0 + var_int_v]] == var_int_v and \
+			(var_byte_arr_b[var_short_arr_a[39] + var_byte_m] != 1 or var_byte_arr_a[8810 + var_byte_arr_k[2]] != var_int_v and var_byte_arr_b[var_short_arr_a[41] + var_byte_m] != 0):
+			var_f_a.void_c(var_int_v)
+		if var_byte_arr_b[var_short_arr_a[39] + var_byte_m] != 1:
+			var_byte_arr_a[6464 + var_int_v] = JNum.to_byte(69 if n == 0 and var_byte_m >= 19 and var_byte_m <= 26 else var_byte_arr_b[var_short_arr_a[29] + var_byte_m])
+			var_byte_arr_a[6262 + var_int_v] = var_byte_arr_a[3131 + var_int_v]
+			var_byte_arr_a[6363 + var_int_v] = var_byte_arr_a[3232 + var_int_v]
+	if not (var_byte_arr_a[1414 + var_int_v] < 12 or n >= 2 and (var_f_a.var_boolean_N or var_byte_m != 12 and var_byte_m != 16 or (var_byte_arr_b[var_short_arr_a[41] + var_byte_arr_a[6464 + var_int_v]] != 3 and var_byte_arr_b[var_short_arr_a[41] + var_byte_arr_a[6464 + var_int_v]] != 7))):
+		void_a_ib(var_int_v, var_byte_m)
+	if var_byte_arr_a[2828 + var_int_v] == 13:
+		if var_byte_arr_a[3131 + var_int_v] > 0 and (var_byte_arr_arr_b[var_byte_arr_a[3232 + var_int_v]][var_byte_arr_a[3131 + var_int_v] - 1] == -127 or var_byte_arr_arr_b[var_byte_arr_a[3232 + var_int_v]][var_byte_arr_a[3131 + var_int_v] - 1] == var_int_v):
+			var_n2: int = 3131 + var_int_v
+			var_byte_arr_a[var_n2] = JNum.to_byte(var_byte_arr_a[var_n2] - 1)
+		if var_byte_arr_a[3131 + var_int_v] < var_f_a.var_short_c - 1 and (var_byte_arr_arr_b[var_byte_arr_a[3232 + var_int_v]][var_byte_arr_a[3131 + var_int_v] + 1] == -127 or var_byte_arr_arr_b[var_byte_arr_a[3232 + var_int_v]][var_byte_arr_a[3131 + var_int_v] + 1] == var_int_v):
+			var_n3: int = 3131 + var_int_v
+			var_byte_arr_a[var_n3] = JNum.to_byte(var_byte_arr_a[var_n3] + 1)
+	if var_byte_arr_b[var_short_arr_a[39] + var_byte_arr_a[2828 + var_int_v]] == 1:
+		void_b_ii(var_byte_arr_k[1], var_byte_arr_k[2])
+
+## original: private void a(int n, int n2, boolean bl)  (b.java:809)
+func a_iii(n: int, n2: int, bl: bool) -> void:
+	if bl:
+		var_byte_arr_a[4747 + var_int_v] = var_byte_arr_arr_b[n2][n]
+	c_iiii(n, n2, var_int_u, 0)
+	var_byte_k = var_byte_arr_k[0]
+	var_byte_l = byte_a()
+	if var_byte_arr_k[3] == 0:
+		var_byte_m = var_byte_arr_b[var_short_arr_a[16] + var_byte_arr_b[var_short_arr_a[17] + var_byte_k] + var_byte_arr_k[1 if var_byte_k != 4 else 2]]
+		if var_byte_k == 2:
+			if var_byte_arr_k[1] == 6 and var_byte_arr_a[3636 + var_int_v] > 0 and var_byte_arr_a[3535 + var_int_v] <= 13 and not bl:
+				var_byte_m = var_byte_arr_b[var_short_arr_a[121] + var_byte_arr_a[3535 + var_int_v]]
+			if var_byte_arr_k[1] >= 12 and var_byte_arr_a[8505 + var_byte_arr_k[2]] >= var_byte_arr_b[var_short_arr_a[138] + 182 + var_byte_arr_a[9237 + var_byte_arr_k[2]]]:
+				var_byte_m = JNum.to_byte(69)
+	else:
+		var_byte_m = JNum.to_byte(var_byte_arr_b[var_short_arr_a[19] + var_byte_k - 1] + (JNum.to_byte(1) if bl else 0) if var_byte_arr_a[1414 + var_byte_arr_k[2]] >= 12 or var_byte_arr_k[0] == 2 else 107)
+	if var_byte_m <= 9:
+		var_byte_m = JNum.to_byte(var_byte_m + var_byte_arr_b[var_short_arr_a[18] + var_byte_arr_a[6565 + var_int_v]])
+	if var_f_a.var_byte_q == 3 and var_byte_arr_b[var_short_arr_a[41] + var_byte_m] != 0:
+		var_byte_m = JNum.to_byte(69)
+
+## original: private void void_a(int n, byte by)  (b.java:837)
+func void_a_ib(n: int, by: int) -> void:
+	if var_byte_arr_a[2828 + n] != by:
+		var_byte_arr_a[404 + n] = 0
+		var_byte_arr_a[2828 + n] = JNum.to_byte(by)
+		var_n2: int = 1111 + n
+		var_byte_arr_a[var_n2] = JNum.to_byte(var_byte_arr_a[var_n2] & 0xF)
+		var_int_B = var_byte_arr_b[var_short_arr_a[38] + by]
+		if var_int_B < 0:
+			var_int_B = var_byte_arr_a[var_short_arr_b[-var_int_B] + n]
+		if by < 83 or by > 85:
+			C()
+
+
+# ---------------------------------------------------------------------------
+# Stubs for methods referenced above but not yet reached in the sequential
+# source pass. Each will be replaced with a real port when we get to its
+# location in b.java. Calling one of these before then will loudly warn
+# instead of silently doing nothing, so testing surfaces gaps immediately.
+# ---------------------------------------------------------------------------
+
+## original: private void d(int n, int n2)  (b.java:?? — called from g_i)
+func d_ii(_n: int, _n2: int) -> void:
+	push_warning("TribesWorld.d_ii() not ported yet")
+
+## original: private void U()  (b.java:?? — called from g_i)
+func U() -> void:
+	push_warning("TribesWorld.U() not ported yet")
+
+## original: private void Q()  (b.java:?? — called from g_i)
+func Q() -> void:
+	push_warning("TribesWorld.Q() not ported yet")
+
+## original: private void c(int, int, int, int)  (b.java:?? — called from a_iii)
+func c_iiii(_n: int, _n2: int, _n3: int, _n4: int) -> void:
+	push_warning("TribesWorld.c_iiii() not ported yet")
+
+## original: private byte byte_a()  (b.java:?? — called from a_iii)
+func byte_a() -> int:
+	push_warning("TribesWorld.byte_a() not ported yet")
 	return 0
+
+## original: private void C()  (b.java:?? — called from void_a_ib)
+func C() -> void:
+	push_warning("TribesWorld.C() not ported yet")
+
+## original: private void void_b(int, int)  (b.java:?? — called from h_i)
+func void_b_ii(_n: int, _n2: int) -> void:
+	push_warning("TribesWorld.void_b_ii() not ported yet")
