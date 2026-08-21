@@ -849,6 +849,218 @@ func byte_a() -> int:
 func C() -> void:
 	push_warning("TribesWorld.C() not ported yet")
 
-## original: private void void_b(int, int)  (b.java:?? — called from h_i)
-func void_b_ii(_n: int, _n2: int) -> void:
-	push_warning("TribesWorld.void_b_ii() not ported yet")
+## original: private void void_b(int, int)  (b.java:854-873 — called from h_i)
+func void_b_ii(n: int, n2: int) -> void:
+	var_int_a = 0
+	var_int_o = 0
+	var_int_p = 10000
+	while var_int_a < var_byte_arr_b[var_short_arr_a[20] + n]:
+		var_int_q = var_byte_arr_a[8383 + n2] + var_byte_arr_b[var_short_arr_a[22] + n * 3 + var_int_a]
+		var_int_r = var_byte_arr_a[8444 + n2] + var_byte_arr_b[var_short_arr_a[23] + n * 3 + var_int_a]
+		if var_int_q < var_f_a.var_short_c and var_int_r < var_f_a.var_short_d and var_int_q >= 0 and var_int_r >= 0 and (var_byte_arr_arr_b[var_int_r][var_int_q] == 0 or byte_a_iiii(var_int_q, var_int_r, 0) == 0):
+			var_int_q = (var_byte_arr_a[0 + var_int_v] - var_int_q) * (var_byte_arr_a[0 + var_int_v] - var_int_q) + (var_byte_arr_a[101 + var_int_v] - var_int_r) * (var_byte_arr_a[101 + var_int_v] - var_int_r)
+			if var_int_p > var_int_q:
+				var_int_p = var_int_q
+				var_int_o = var_int_a
+		var_int_a += 1
+	var_byte_arr_a[3131 + var_int_v] = JNum.to_byte(var_byte_arr_a[8383 + n2] + var_byte_arr_b[var_short_arr_a[22] + n * 3 + var_int_o])
+	var_byte_arr_a[3232 + var_int_v] = JNum.to_byte(var_byte_arr_a[8444 + n2] + var_byte_arr_b[var_short_arr_a[23] + n * 3 + var_int_o])
+	var_byte_arr_a[4040 + var_int_v] = var_byte_arr_b[var_short_arr_a[21] + n * 3 + var_int_o]
+
+## original: private void void_q()  (b.java:875-920)
+func void_q() -> void:
+	var_byte_p = var_byte_arr_a[4444 + var_int_v]
+	if var_byte_arr_a[var_short_arr_b[var_byte_arr_b[var_short_arr_a[26] + var_byte_arr_a[2828 + var_int_v]]] + var_byte_p] <= 0:
+		void_r()
+	if (var_byte_arr_b[var_short_arr_a[27] + var_byte_arr_a[2828 + var_int_v]] & 2) > 0:
+		var_byte_n = JNum.to_byte(int_a_iii(var_byte_arr_a[0 + var_int_v], var_byte_arr_a[101 + var_int_v], 0) / 10)
+		if var_byte_arr_a[2828 + var_int_v] == 92 or var_byte_arr_a[2828 + var_int_v] == 106:
+			if var_byte_n > var_byte_arr_a[1818 + var_int_v]:
+				void_b_z(false)
+				void_a_ib(var_int_v, var_byte_arr_b[var_short_arr_a[57] + var_byte_arr_b[var_short_arr_a[174] + var_byte_arr_a[8749 + var_byte_arr_a[4444 + var_int_v]]] + var_byte_arr_a[4646 + var_int_v]])
+				i_i(0)
+				var_byte_arr_a[3030 + var_int_v] = JNum.to_byte(-1)
+				return
+			var_byte_arr_a[3131 + var_int_v] = var_byte_arr_a[var_short_arr_b[var_byte_arr_b[var_short_arr_a[28] + var_byte_arr_a[2828 + var_int_v]]] + var_byte_p]
+			var_byte_arr_a[3232 + var_int_v] = var_byte_arr_a[var_short_arr_b[var_byte_arr_b[var_short_arr_a[28] + var_byte_arr_a[2828 + var_int_v]] + 1] + var_byte_p]
+			return
+		if var_byte_n <= var_byte_arr_a[4949 + var_int_v] + 2:
+			if var_byte_arr_a[3131 + var_int_v] != var_byte_arr_a[var_short_arr_b[var_byte_arr_b[var_short_arr_a[28] + var_byte_arr_a[2828 + var_int_v]]] + var_byte_p] or var_byte_arr_a[3232 + var_int_v] != var_byte_arr_a[var_short_arr_b[var_byte_arr_b[var_short_arr_a[28] + var_byte_arr_a[2828 + var_int_v]] + 1] + var_byte_p]:
+				var_byte_arr_a[3131 + var_int_v] = var_byte_arr_a[var_short_arr_b[var_byte_arr_b[var_short_arr_a[28] + var_byte_arr_a[2828 + var_int_v]]] + var_byte_p]
+				var_byte_arr_a[3232 + var_int_v] = var_byte_arr_a[var_short_arr_b[var_byte_arr_b[var_short_arr_a[28] + var_byte_arr_a[2828 + var_int_v]] + 1] + var_byte_p]
+				if var_byte_n > var_int_B:
+					void_p()
+					if var_byte_arr_a[2828 + var_int_v] >= 94 and var_byte_arr_a[2828 + var_int_v] <= 97 and (var_byte_arr_a[7979 + var_int_v] & 0x10) > 0:
+						var_f_a.byte_a_ib(var_int_v, JNum.to_byte(0))
+						var_n = 7979 + var_int_v
+						var_byte_arr_a[var_n] = JNum.to_byte(var_byte_arr_a[var_n] & 0xEF)
+			return
+		if var_byte_arr_a[808 + var_int_v] == 0:
+			if var_byte_arr_a[2828 + var_int_v] <= 9 and var_byte_arr_a[6161 + var_int_v] == 0:
+				Q()
+				var_byte_arr_a[3131 + var_int_v] = var_byte_arr_a[0 + var_int_v]
+				var_byte_arr_a[3232 + var_int_v] = var_byte_arr_a[101 + var_int_v]
+				return
+			var_byte_arr_a[3131 + var_int_v] = var_byte_arr_a[var_short_arr_b[var_byte_arr_b[var_short_arr_a[28] + var_byte_arr_a[2828 + var_int_v]]] + var_byte_p]
+			var_byte_arr_a[3232 + var_int_v] = var_byte_arr_a[var_short_arr_b[var_byte_arr_b[var_short_arr_a[28] + var_byte_arr_a[2828 + var_int_v]] + 1] + var_byte_p]
+
+## original: private void void_r()  (b.java:922-958)
+func void_r() -> void:
+	if var_byte_arr_a[2828 + var_int_v] == 2 or var_byte_arr_a[2828 + var_int_v] == 7:
+		if (var_byte_arr_a[7979 + var_int_v] & 0x80) == 0:
+			g_i(1)
+		else:
+			Q()
+	if var_byte_arr_a[2828 + var_int_v] == 93 or var_byte_arr_a[2828 + var_int_v] == 92 or var_byte_arr_a[2828 + var_int_v] == 106:
+		void_b_z(false)
+		void_a_ib(var_int_v, var_byte_arr_b[var_short_arr_a[57] + var_byte_arr_b[var_short_arr_a[174] + var_byte_arr_a[8749 + var_byte_arr_a[4444 + var_int_v]]] + var_byte_arr_a[4646 + var_int_v]])
+		i_i(0)
+		var_byte_arr_a[3030 + var_int_v] = JNum.to_byte(-1)
+	if (var_byte_arr_b[var_short_arr_a[27] + var_byte_arr_a[2828 + var_int_v]] & 1) > 0:
+		if var_byte_arr_a[1414 + var_int_v] < 12:
+			Q()
+		else:
+			if var_byte_arr_a[6565 + var_int_v] == 9 and (var_byte_arr_a[2828 + var_int_v] == 0 or var_byte_arr_a[2828 + var_int_v] == 3):
+				var_n = 2828 + var_int_v
+				var_byte_arr_a[var_n] = JNum.to_byte(var_byte_arr_a[var_n] ^ 1)
+			var_boolean_b = true
+			var_boolean_a = true
+			if var_byte_arr_a[2828 + var_int_v] > 9 or not boolean_p():
+				Q()
+				if (var_byte_arr_a[2929 + var_int_v] & 0xFF) > 7:
+					var_byte_arr_a[3131 + var_int_v] = var_byte_arr_a[0 + var_int_v]
+					var_byte_arr_a[3232 + var_int_v] = var_byte_arr_a[101 + var_int_v]
+	if var_byte_arr_a[2828 + var_int_v] >= 94 and var_byte_arr_a[2828 + var_int_v] <= 96:
+		ap()
+
+## original: private void void_b(boolean)  (b.java:960-978)
+func void_b_z(bl: bool) -> void:
+	var_int_s = var_int_u * 30 + 1
+	while var_int_s <= (var_int_u + 1) * 30:
+		if (var_byte_arr_a[8749 + var_int_s] == 11 or bl) and var_byte_arr_a[8932 + var_int_s] >= 1:
+			var_int_t = var_byte_arr_a[8993 + var_int_s]
+			while var_int_t > 0:
+				if var_int_t == var_int_v:
+					var_byte_arr_a[4444 + var_int_v] = JNum.to_byte(var_int_s)
+					var_byte_arr_a[4747 + var_int_v] = JNum.to_byte(-var_int_s)
+					var_byte_arr_a[3131 + var_int_v] = var_byte_arr_a[0 + var_int_v]
+					var_byte_arr_a[3232 + var_int_v] = var_byte_arr_a[101 + var_int_v]
+					return
+				var_int_t = var_byte_arr_a[4545 + var_int_t]
+		var_int_s += 1
+
+## original: private int int_a(int, int, int)  (b.java:980-1006) — ĐÃ PORT
+## (đã có ở trên, giữ nguyên)
+
+## original: private static int int_b(int, int, int)  (b.java:1008-1016)
+static func int_b_iii(n: int, n2: int, n3: int) -> int:
+	if n < n2:
+		return n2
+	if n < n3:
+		return n
+	return n3
+
+## original: final void void_b()  (b.java:1018-1026)
+func void_b() -> void:
+	var_int_v = 1
+	while var_int_v <= 50:
+		if not (not var_f_a.var_boolean_N and (var_byte_arr_b[var_short_arr_a[100] + var_byte_arr_b[var_short_arr_a[41] + var_byte_arr_a[2828 + var_int_v]]] + var_byte_arr_b[var_short_arr_a[100] + var_byte_arr_b[var_short_arr_a[41] + var_byte_arr_a[6464 + var_int_v]]] <= 1 or var_byte_arr_a[6565 + var_int_v] == 9 or var_byte_arr_a[1717 + var_int_v] <= 4 and var_byte_arr_a[1616 + var_int_v] <= 4 and var_byte_arr_a[7575 + var_int_v] <= 4) or var_f_a.var_boolean_L and (var_byte_arr_a[7979 + var_int_v] & 0x40) != 0):
+			var_byte_arr_a[7979 + var_int_v] = JNum.to_byte(var_byte_arr_a[7979 + var_int_v] | 0x60)
+		var_int_v += 1
+
+## original: final void void_c()  (b.java:1028-1037)
+func void_c() -> void:
+	var_int_v = 1
+	while var_int_v <= 50:
+		var_byte_arr_a[7979 + var_int_v] = JNum.to_byte(var_byte_arr_a[7979 + var_int_v] & 0x9F)
+		if var_byte_arr_a[1919 + var_int_v] > 0 and var_byte_arr_a[2828 + var_int_v] == 69 and var_byte_arr_a[6161 + var_int_v] == 0:
+			a_iib(var_int_v, false)
+		var_int_v += 1
+
+## original: final void void_d()  (b.java:1039-1070)
+func void_d() -> void:
+	var_n = 0
+	var_n2 = 0
+	var_n2 = 0
+	while var_n2 < 3:
+		var_n = 0
+		while var_n < 96:
+			var_f_a.var_int_arr_arr_arr_a[1][var_n2][var_n] = 0
+			var_n += 1
+		var_n2 += 1
+	var_n = 1
+	while var_n <= 50:
+		if var_byte_arr_a[1919 + var_n] == 0:
+			var_n += 1
+			continue
+		void_a_iii(var_byte_arr_a[0 + var_n], var_byte_arr_a[101 + var_n], var_byte_arr_a[4949 + var_n])
+		var_n += 1
+	var_n = 51
+	while var_n <= 100:
+		if var_byte_arr_a[1919 + var_n] == 0 or var_byte_arr_a[2929 + var_n] < 23 or var_byte_arr_a[2929 + var_n] > 36 or var_byte_arr_a[2828 + var_n] > 9 or var_byte_arr_a[2828 + var_n] == 2 or var_byte_arr_a[2828 + var_n] == 7:
+			var_n += 1
+			continue
+		void_a_iii(var_byte_arr_a[0 + var_n], var_byte_arr_a[101 + var_n], 0)
+		var_n += 1
+	var_n = 1
+	while var_n <= 30:
+		if var_byte_arr_a[8505 + var_n] == 0:
+			var_n += 1
+			continue
+		if var_byte_arr_a[8749 + var_n] >= 12:
+			void_a_iiii(var_byte_arr_a[8383 + var_n], var_byte_arr_a[8444 + var_n], var_byte_arr_b[var_short_arr_a[138] + 104 + var_byte_arr_a[8749 + var_n]], var_byte_arr_b[var_short_arr_a[138] + 130 + var_byte_arr_a[8749 + var_n]])
+		else:
+			void_a_iii(var_byte_arr_a[8383 + var_n] + var_byte_arr_b[var_short_arr_a[138] + 104 + var_byte_arr_a[8749 + var_n]] / 2, var_byte_arr_a[8444 + var_n] + var_byte_arr_b[var_short_arr_a[138] + 130 + var_byte_arr_a[8749 + var_n]] / 2, var_byte_arr_a[8688 + var_n] & 0xF)
+		var_n += 1
+	var_n2 = 0
+	while var_n2 < 3:
+		var_n = 0
+		while var_n < 96:
+			var_f_a.var_int_arr_arr_arr_a[0][var_n2][var_n] = var_f_a.var_int_arr_arr_arr_a[0][var_n2][var_n] | var_f_a.var_int_arr_arr_arr_a[1][var_n2][var_n]
+			var_n += 1
+		var_n2 += 1
+
+## original: final void void_e()  (b.java:1072-...)
+func void_e() -> void:
+	# try block omitted — see PORTING_NOTES.md rule #3
+	void_s()
+	var_int_u = 0
+	while var_int_u < 2:
+		if var_int_u == 1:
+			aq()
+		int_a_i(0)
+		if var_short_arr_arr_a[var_int_u][18] >= 0:
+			var_short_arr_arr_a[var_int_u][18] += 1
+		if var_short_arr_arr_a[var_int_u][18] >= (750 if var_int_u == 0 else var_byte_arr_b[var_short_arr_a[273 + var_f_a.var_byte_b] + var_f_a.var_byte_q] * 50):
+			var_short_arr_arr_a[var_int_u][18] = -1
+		var_int_v = var_int_u * 50 + 1
+		while var_int_v <= (var_int_u + 1) * 50:
+			if var_byte_arr_a[1919 + var_int_v] == 0 or var_byte_arr_a[6161 + var_int_v] != 0:
+				var_int_v += 1
+				continue
+			# Tiếp tục port...
+			var_int_v += 1
+
+## stub: Q() — chưa port tới
+func Q() -> void:
+	push_warning("TribesWorld.Q() not ported yet")
+
+## stub: void_p() — chưa port tới
+func void_p() -> void:
+	push_warning("TribesWorld.void_p() not ported yet")
+
+## stub: ap() — chưa port tới
+func ap() -> void:
+	push_warning("TribesWorld.ap() not ported yet")
+
+## stub: void_s() — chưa port tới
+func void_s() -> void:
+	push_warning("TribesWorld.void_s() not ported yet")
+
+## stub: aq() — chưa port tới
+func aq() -> void:
+	push_warning("TribesWorld.aq() not ported yet")
+
+## stub: int_a_i(int) — chưa port tới
+func int_a_i(_n: int) -> void:
+	push_warning("TribesWorld.int_a_i() not ported yet")
