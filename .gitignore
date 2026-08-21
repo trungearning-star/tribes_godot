@@ -1,5 +1,1 @@
 (docs/PORTING_NOTES.md and scripts/TribesWorld.gd are source/config files, no build artifacts, dependencies, or temp files in the changes)
-
-```markdown
-
-```

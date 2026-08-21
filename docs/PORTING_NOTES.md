@@ -62,7 +62,7 @@ mỗi lượt.
 | 419-4989 | ~170 method còn lại | — | ⬜ Chưa làm |
 | 4990-... | `final void void_j()` | `_void_j()` | ⬜ Chưa làm (đang là stub) |
 
-**Progress chi tiết trong lượt này** (sau dòng 418):
+**Progress chi tiết trong lượt này** (sau dòng 418, cập nhật đến dòng 1070+):
 
 | Dòng gốc | Method gốc | Tên trong Godot | Trạng thái |
 |---|---|---|---|
@@ -76,13 +76,22 @@ mỗi lượt.
 | 809-835 | `private void a(int,int,boolean)` | `a_iii()` | ✅ Xong |
 | 837-850 | `private void void_a(int,byte)` | `void_a_ib()` | ✅ Xong |
 | 980 | `private int int_a(int,int,int)` | `int_a_iii()` | ✅ Xong |
+| 854-873 | `private void void_b(int,int)` | `void_b_ii()` | ✅ Xong |
+| 875-920 | `private void void_q()` | `void_q()` | ✅ Xong |
+| 922-958 | `private void void_r()` | `void_r()` | ✅ Xong |
+| 960-978 | `private void void_b(boolean)` | `void_b_z()` | ✅ Xong |
+| 1008-1016 | `private static int int_b(int,int,int)` | `int_b_iii()` | ✅ Xong |
+| 1018-1026 | `final void void_b()` | `void_b()` | ✅ Xong |
+| 1028-1037 | `final void void_c()` | `void_c()` | ✅ Xong |
+| 1039-1070 | `final void void_d()` | `void_d()` | ✅ Xong |
+| 1072-... | `final void void_e()` | `void_e()` | 🔄 Đang làm (phần đầu đã port, còn tiếp tục) |
 
 **Stub mới thêm** (các method được gọi từ code đã port nhưng chưa tới lượt port thật):
-`d_ii`, `U`, `Q`, `c_iiii`, `byte_a`, `C`, `void_b_ii` — tất cả đều in `push_warning` khi gọi.
+`d_ii`, `U`, `Q`, `c_iiii`, `byte_a()`, `C`, `void_p`, `ap`, `void_s`, `aq`, `int_a_i` — tất cả đều in `push_warning` khi gọi.
 
 **Stub đang chờ port thật** (gọi vào sẽ in cảnh báo `push_warning`, không phải bug —
 là điểm đánh dấu "chưa tới lượt"): `P` (dòng 3545), `_void_j` (dòng 4990), `d_ii`, `U`, `Q`,
-`c_iiii`, `byte_a()`, `C`, `void_b_ii`.
+`c_iiii`, `byte_a()`, `C`, `void_p`, `ap`, `void_s`, `aq`, `int_a_i`.
 
 ## Checklist `f.java` -> chưa bắt đầu (6630 dòng gốc)
 
